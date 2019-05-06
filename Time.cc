@@ -9,11 +9,7 @@ t0=clock()
 
 
 
-// Install metis from:
-// http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz
 
-// Build with
-// g++ metis.cc -lmetis
 
 int main(){
 
