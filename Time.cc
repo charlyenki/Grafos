@@ -53,5 +53,5 @@ int main(){
     return 0;
 }
 double time = (double(t1-t0)/CLOCKS_PER_SEC);
-cout << "Tiempo de ejecucion : " << time << endl;
+std::cout << "Tiempo de ejecucion : " << time << endl;
 
