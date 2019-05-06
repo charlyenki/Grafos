@@ -3,15 +3,11 @@
 #include <iostream>
 #include <ctime> 
 
-double t0, t1;
-
-t0=clock()
-
-
-
-
 
 int main(){
+	
+    clock_t t;
+    int f;
 
     idx_t nVertices = 6;
     idx_t nEdges    = 7;
@@ -22,14 +18,10 @@ int main(){
     idx_t part[nVertices];
 
 
-    // Indexes of starting points in adjacent array
     idx_t xadj[nVertices+1] = {0,2,5,7,9,12,14};
 
-    // Adjacent vertices in consecutive index order
     idx_t adjncy[2 * nEdges] = {1,3,0,4,2,1,5,0,4,3,1,5,4,2};
 
-    // Weights of vertices
-    // if all weights are equal then can be set to NULL
     idx_t vwgt[nVertices * nWeights];
     
 
@@ -41,7 +33,8 @@ int main(){
 				       NULL, NULL, NULL, &nParts, NULL,
 				       NULL, NULL, &objval, part);
                
-               
+    t = clock() - t;
+    printf ("Tomó %d clicks (%f segundos).\n",t,((float)t)/CLOCKS_PER_SEC);           
 
     std::cout << ret << std::endl;
     
@@ -52,6 +45,4 @@ int main(){
     
     return 0;
 }
-double time = (double(t1-t0)/CLOCKS_PER_SEC);
-std::cout << "Tiempo de ejecucion : " << time << endl;
 
