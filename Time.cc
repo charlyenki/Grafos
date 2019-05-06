@@ -3,7 +3,7 @@
 #include <iostream>
 #include <ctime> 
 
-unsigned t0, t1;
+double t0, t1;
 
 t0=clock()
 
