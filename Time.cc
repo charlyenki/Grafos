@@ -32,10 +32,13 @@ int main(){
     int ret = METIS_PartGraphKway(&nVertices,& nWeights, xadj, adjncy,
 				       NULL, NULL, NULL, &nParts, NULL,
 				       NULL, NULL, &objval, part);
-               
-    t = clock() - t;
-    printf ("Tomó %d clicks (%f segundos).\n",t,((float)t)/CLOCKS_PER_SEC);           
+	
+	t = clock() - t;
+        segundos = (double)(t) / CLOCKS_PER_SEC; /*según que estes midiendo el tiempo en segundos es demasiado grande*/
 
+       printf("%f",segundos); 
+
+               
     std::cout << ret << std::endl;
     
     for(unsigned part_i = 0; part_i < nVertices; part_i++){
